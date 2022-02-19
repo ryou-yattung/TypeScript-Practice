@@ -50,3 +50,44 @@ interface User {
 }
 
 //---------object---------
+
+//type不可擴充
+type Card = {
+  name: string;
+  desc: string;
+};
+
+// type Card = {
+//   age: number;
+// };
+
+const obj: Card = { name: "Tony", desc: "..." };
+
+//interface可擴充
+interface Card1 {
+  name: string;
+  age: number;
+}
+
+interface Card1 {
+  num?: number; //num? = 可選擇
+}
+
+const obj2: Card1 = { name: "Tom", age: 98 }; //num可寫可不寫
+
+//---------function---------
+//參數
+function hello(a: string, b: string) {
+  return a + b;
+}
+
+function hello1(a: string, b: string): number {
+  console.log(a, b);
+
+  return 333;
+}
+
+//undefined
+function hello2(name: string, age?: number) {
+  return name + age;
+}
